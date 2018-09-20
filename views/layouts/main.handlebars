@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<title>Up2Day News</title>
+</head>
+
+<body>
+	<header>
+  <h1 href="/" id="sitename" class="display-4"> Welcome to Up2Day</h1>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" id="all-articles" href="/">All Articles</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" id="saved-articles" href="/saved">Saved Articles<span ></span></a>
+      </li>
+      <li class="nav-item active">
+<form action="/scrape" method="GET">
+			<button type="submit" id="refresh-articles">Scrape For Newest Articles</button>
+		</form>      </li>
+      <li>
+          <form action="/search" method="POST">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="search-submit" type="submit">Search</button>
+			<input type="text" name="search" placeholder="Search for articles" id="search-input">
+		</form>
+      </li>
+      </div>
+  </nav>
+
+
+		{{!-- <a href="/"><div id="sitename">Up2Day News</div></a> --}}
+		{{!-- <a href="/"><button id="all-articles">All Articles</button></a> --}}
+		{{!-- <a href="/saved"><button id="saved-articles">Saved Articles</button></a> --}}
+		{{!-- <form action="/scrape" method="GET">
+			<button type="submit" id="refresh-articles">Scrape For Newest Articles</button>
+		</form> --}}
+		{{!-- <form action="/search" method="POST">
+			<button type="submit" id="search-submit">Submit</button>
+			<input type="text" name="search" placeholder="Search for articles" id="search-input">
+		</form> --}}
+	</header>
+	<img id="cover" src="/assets/images/NewsP.jpeg">
+	<div id="container">
+		{{{ body }}}
+	</div>
+	
+	<script src="/assets/js/Up2Day.js"></script>
+
+	<div id="addnote">
+		<div id="note-displayer">
+			<h2>Note</h2>
+			<h3>Article: <span id="article-title"></span></h3>
+			<div id="note">
+				<label for="note-title">Title</label><br>
+				<input type="text" placeholder="Title" name="title" id="note-title"><br>
+				<label for="note-body">Note</label><br>
+				<textarea rows="7" placeholder="Note" id="note-body"></textarea><br>
+				<button type="submit" id="add-note">Save Note</button>
+				<button type="button" id="close-note">Cancel</button>
+			</div>
+		</div>
+	</div>
+	
+	<footer>© Copyright 2018 PAC</footer>
+	<script src="/assets/js/Up2Day.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
